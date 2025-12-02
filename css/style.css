@@ -90,7 +90,7 @@
         }
 
         .overlay-menu.active {
-            right: 0;
+            right: -10;
         }
 
         .overlay-menu a {
@@ -327,6 +327,7 @@
             }
 
         }
+
 
 
 

@@ -79,7 +79,7 @@
         .overlay-menu {
             position: fixed;
             top: 0;
-            right: -100%;
+            right: -80%;
             width: 82px;
             height: 100vh;
             background: linear-gradient(135deg, #107fdb 0%, #19FF89 100%); /* Biru ke hijau */
@@ -90,7 +90,7 @@
         }
 
         .overlay-menu.active {
-            right: -10;
+            right: 0;
         }
 
         .overlay-menu a {
@@ -327,6 +327,7 @@
             }
 
         }
+
 
 
 

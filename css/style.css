@@ -80,7 +80,7 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 100px;
+            width: 50px;
             height: 100vh;
             background: linear-gradient(135deg, #107fdb 0%, #19FF89 100%); /* Biru ke hijau */
             z-index: 1000;
@@ -327,4 +327,5 @@
             }
 
         }
+
 

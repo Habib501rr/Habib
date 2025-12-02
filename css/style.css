@@ -1,0 +1,328 @@
+ /* ================= GLOBAL ================= */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8fdfa; /* Warna latar hijau muda */
+            color: #0a2942; /* Biru tua untuk teks */
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        /* ================= NAVBAR ================= */
+        nav {
+            background: #0a2942; /* Biru tua */
+            padding: 15px 40px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 3px 10px rgba(10, 41, 66, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        nav .desktop-menu a {
+            color: #c1e6ff; /* Biru muda */
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav .desktop-menu a:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ================= MENU ICON & OVERLAY ================= */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+        }
+
+        .menu-icon span {
+            height: 4px;
+            width: 100%;
+            background-color: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        .overlay-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, #107fdb 0%, #19FF89 100%); /* Biru ke hijau */
+            z-index: 1000;
+            padding: 80px 30px 30px;
+            transition: right 0.5s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .overlay-menu.active {
+            right: 0;
+        }
+
+        .overlay-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(13, 26, 168, 0.1);
+            transition: 0.3s;
+        }
+
+        .overlay-menu a:hover {
+            color: #b3ffda; /* Hijau muda */
+            padding-left: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            background: linear-gradient(135deg, #065fa8 0%, #07c180 100%); /* Biru ke hijau */
+            text-align: center;
+            padding: 140px 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            margin-top: 35px;
+            background: #2ecc71; /* Hijau */
+            color: white;
+            padding: 12px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #27ae60; /* Hijau lebih gelap */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+        }
+
+        /* ================= SECTION TITLE ================= */
+        .section-title {
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            font-weight: 700;
+            color: #0a2942; /* Biru tua */
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #2ecc71; /* Hijau */
+            border-radius: 2px;
+        }
+
+        /* ================= FEATURE CARDS ================= */
+        .features {
+            display: flex;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 25px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(10, 41, 66, 0.08);
+            flex: 1;
+            transition: 0.3s;
+            color: #0a2942;
+            border-top: 5px solid #2ecc71; /* Hijau sebagai aksen */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #0a2942, #2ecc71);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-box:hover::before {
+            opacity: 1;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(10, 41, 66, 0.15);
+        }
+
+        .feature-box h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #0a2942; /* Biru tua */
+        }
+
+        .feature-box p {
+            color: #4a667f; /* Biru abu-abu */
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            margin-top: 70px;
+            background: #0a2942; /* Biru tua */
+            padding: 30px 25px;
+            text-align: center;
+            color: #c1e6ff; /* Biru muda */
+            font-size: 16px;
+        }
+
+        footer a {
+            color: #2ecc71; /* Hijau */
+            text-decoration: none;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 992px) {
+            .features {
+                flex-wrap: wrap;
+            }
+            
+            .feature-box {
+                min-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .desktop-menu {
+                display: none;
+            }
+            
+            .menu-icon {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .feature-box {
+                min-width: 100%;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .overlay-menu {
+                width: 100%;
+            }
+        }
